@@ -8,7 +8,7 @@ export const InformationCity = () => {
   const selectedDate = useSelector(
     (state) => state?.forcastDates?.selectedDate
   );
-  const information = useSelector(
+  const cityInfo = useSelector(
     (state) => state?.informationCity?.dataInformation
   );
 
@@ -26,23 +26,26 @@ export const InformationCity = () => {
       ) : (
         selectedDate && (
           <div>
-            Show information of selected city name: {information.name}
+            Show information of selected city name: {cityInfo.name}
             <br />
-            City Label: {information.label}
+            City Label: {cityInfo.label}
             <br />
-            City Description: {information.description}
+            City Description: {cityInfo.description}
             <br />
-            City Wether:
             <br />
-            {information.weather && (
+            City Wether Information
+            <br />
+            {cityInfo.weather && (
               <div>
-                Date :{information.weather.date}
+                Date :{cityInfo.weather.date}
                 <br />
-                Average day tempreture(In C):{information.weather.daily}
+                Average day tempreture between 6 AM to 6 PM(In C):
+                {cityInfo.weather.daily}
                 <br />
-                Average night tempreture(In C):{information.weather.nightly}
+                Average night tempreture between 6 PM to 6 AM(In C):
+                {cityInfo.weather.nightly}
                 <br />
-                Average pressure(In C):{information.weather.pressure}
+                Average pressure(In hPa):{cityInfo.weather.pressure}
               </div>
             )}
           </div>
