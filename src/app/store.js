@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import citiesReducer from "../features/cities/citiesSlice";
 import informationReducer from "../features/informationCity/informationCitySlice";
-import datesReducer from "../features/weatherForcast/datesSlice";
+import datesReducer from "../features/dateSelection/datesSlice";
 
 const store = configureStore({
   reducer: {

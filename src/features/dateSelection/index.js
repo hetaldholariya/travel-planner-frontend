@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { getDates, setDate } from "../weatherForcast/datesSlice";
+import { getDates, setDate } from "./datesSlice";
 
 export const WeatherForcast = () => {
   const dispatch = useDispatch();

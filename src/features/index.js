@@ -1,3 +1,3 @@
 export * from "./cities/index";
 export * from "./informationCity/index";
-export * from "./weatherForcast/index";
+export * from "./dateSelection/index";
