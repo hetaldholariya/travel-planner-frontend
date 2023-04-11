@@ -3,11 +3,11 @@ import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { getDates, setDate } from "./datesSlice";
 
-export const ForcastDates = () => {
+export const WeatherForcast = () => {
   const dispatch = useDispatch();
   const dates = useSelector((state) => state.forcastDates);
   const [dateSelected, setDateSelected] = useState("");
-  const UF = useSelector((state) => state?.dateSelected);
+  const UF = useSelector((state) => state?.states?.dateSelected);
 
   const loading = useSelector((state) => state?.forcastDates?.loading);
   const status = useSelector((state) => state?.forcastDates?.status);
@@ -27,6 +27,9 @@ export const ForcastDates = () => {
         <h2>{status}</h2>
       ) : (
         <div>
+          <InputLabel style={{ fontWeight: "bold", fontSize: 50 }}>
+            Travel planner
+          </InputLabel>
           <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
             <InputLabel id="demo-select-small">Date</InputLabel>
             <Select
