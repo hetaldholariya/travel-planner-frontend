@@ -8,7 +8,7 @@ export const SelectCity = () => {
   const dispatch = useDispatch();
   const cities = useSelector((state) => state.cities.citiesData);
   const [citySelected, setCitySelected] = useState("");
-  const UF = useSelector((state) => state?.states?.selectedState);
+  const UF = useSelector((state) => state?.citySelected);
 
   const loading = useSelector((state) => state?.cities?.loading);
   const status = useSelector((state) => state?.cities?.status);
