@@ -27,11 +27,20 @@ jobs:
           npm run build --if-present
           npm run test --if-present
       
+      #zip the build directory
+      - name: Zip Release
+        # You may pin to the exact commit or the version.
+        # uses: TheDoctor0/zip-release@a24011d8d445e4da5935a7e73c1f98e22a439464
+        uses: TheDoctor0/zip-release@0.7.1
+        with:
+          filename: release.zip
+          path: ./build/*
+    
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: .
+          path: release.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -53,4 +62,4 @@ jobs:
           app-name: 'travel-planner-app-frontend'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8FD4E859353D41BDA10D40BC48B65FC8 }}
-          package: .
+          package: release.zip
