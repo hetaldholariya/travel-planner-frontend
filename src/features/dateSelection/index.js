@@ -26,29 +26,30 @@ export const WeatherForcast = () => {
       {loading ? (
         <h2>{status}</h2>
       ) : (
-        <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-          <InputLabel id="demo-select-small">Date</InputLabel>
-          <Select
-            labelId="demo-select-small"
-            id="demo-select-small"
-            value={dateSelected}
-            label="Forcast date"
-            onChange={handleChange}
-          >
-            <MenuItem disabled>Select a date</MenuItem>
-            {/* {alert(typeof dates.forcastDates)} */}
-            {dates.forcastDates?.map((item) => {
-              return (
-                <MenuItem key={item} value={item}>
-                  {item}
-                </MenuItem>
-              );
-            })}
-            {/* {forcastDates?.map((date) => (
-              <MenuItem value={date}>{date}</MenuItem>
-            ))} */}
-          </Select>
-        </FormControl>
+        <div>
+          <InputLabel style={{ fontWeight: "bold", fontSize: 50 }}>
+            Travel planner
+          </InputLabel>
+          <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+            <InputLabel id="demo-select-small">Date</InputLabel>
+            <Select
+              labelId="demo-select-small"
+              id="demo-select-small"
+              value={dateSelected}
+              label="Forcast date"
+              onChange={handleChange}
+            >
+              <MenuItem disabled>Select a date</MenuItem>
+              {dates.forcastDates?.map((item) => {
+                return (
+                  <MenuItem key={item} value={item}>
+                    {item}
+                  </MenuItem>
+                );
+              })}
+            </Select>
+          </FormControl>
+        </div>
       )}
     </>
   );
